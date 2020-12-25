@@ -1,3 +1,5 @@
+//hello
+
 priorityTextUpdate = () => {
     let priorities = document.getElementsByClassName("priority")
     for (let i = 0; i < priorities.length; i++) {

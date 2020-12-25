@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>To-Dos</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand">To-Dos</a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+            </form>
+        </div>
+    </nav>
+    <div class="alert alert-success my-2" role="alert" id="success" style="display: none;">
+        None
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center my-5">Add To-Do here..!!</h1>
+        <div class="card">
+            <div class="card-body">
+                <label for="noteTitle" class="form-label">To-Do Title</label>
+                <input type="text" class="form-control" id="noteTitle" style="text-transform: uppercase;">
+
+                <div class="alert alert-danger my-2" role="alert" id="emptyField" style="display: none;">
+                    To-Do Title cannot be empty..!!
+                </div>
+
+                <div class="alert alert-danger my-2" role="alert" id="alreadyField" style="display: none;">
+                    A To-Do alredy exists with same title..!!
+                </div>
+
+                <label for="noteDescp" class="form-label">To-Do Description</label>
+                <textarea type="text" class="form-control" id="noteDescp" rows="3"></textarea>
+
+                <div class="dropdown my-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="priority"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Priority
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="form-check m-1">
+                            <input class="form-check-input priority" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Maximum</label>
+                        </div>
+                        <div class="form-check m-1">
+                            <input class="form-check-input priority" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">Normal</label>
+                        </div>
+                        <div class="form-check m-1">
+                            <input class="form-check-input priority" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault3" checked>
+                            <label class="form-check-label" for="flexRadioDefault3">Minimum</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row container-fluid" id="btn-container" style="margin: 0;">
+                <button class="btn btn-primary" id="addButton" style="width:100%;" onclick="addNote()">Add
+                    To-Do</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container my-5">
+        <h1 class="text-center my-5">Your To-Dos..!!</h1>
+        <div id="savedNotes" class="row container-fluid" style="margin: 0;">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+    <script src="index.js"></script>
+
+    <div class="alert alert-dark text-center my-0" role="alert">
+        All the data is stored in local storage! Clearing storage will lead to data loss!
+    </div>
+</body>
+
+</html>
